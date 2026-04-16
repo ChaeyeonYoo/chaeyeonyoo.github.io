@@ -1,20 +1,20 @@
 <style>
-  /* 1. 배경 초기화 및 화면 전체 높이 확보 */
-  /* Chirpy 테마의 복잡한 레이아웃을 무시하고 화면 전체를 중앙 정렬 기지로 만듭니다. */
-  html, body, #main-wrapper, #core-wrapper, #main {
-    height: 100% !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center;   /* 수직(세로) 중앙 정렬 */
-    justify-content: center; /* 수평(가로) 중앙 정렬 */
-    background: white !important;
+  /* 1. 배경을 깨끗한 흰색으로 고정 */
+  body {
+    background-color: white !important;
   }
 
-  /* 2. 포털 컨테이너 설정 */
+  /* 2. 대문을 화면 전체 기준 정중앙에 고정 (The Nuclear Option) */
   .minimal-portal {
+    position: fixed;    /* 뷰포트(화면) 기준 고정 */
+    top: 50%;           /* 위에서 50% 지점 */
+    left: 50%;          /* 왼쪽에서 50% 지점 */
+    transform: translate(-50%, -50%); /* 자기 크기의 절반만큼 역이동해서 완벽한 중앙 배치 */
+    
     text-align: center;
+    width: 100%;        /* 가로 너비 확보 */
+    z-index: 9999;      /* 다른 테마 요소보다 무조건 위에 출력 */
     font-family: "Inter", -apple-system, sans-serif;
-    /* margin-top은 이제 필요 없으므로 제거하거나 0으로 설정 */
   }
 
   .name-title {
@@ -22,7 +22,7 @@
     font-weight: 600;
     margin-bottom: 8px;
     color: #1a1a1a;
-    letter-spacing: -0.5px; /* 약간 자간을 좁히면 더 세련돼 보여 */
+    letter-spacing: -0.5px;
   }
 
   .tagline {
@@ -52,8 +52,8 @@
     text-decoration: underline;
   }
 
-  /* 4. Chirpy 기본 UI 강제 숨기기 */
-  #sidebar, #search-results, .post-navigation, #footer, .page__lastmod, #topbar-wrapper {
+  /* 4. 기존 테마 UI 싹 다 숨기기 */
+  #sidebar, #topbar-wrapper, #search-results, .post-navigation, #footer, .page__lastmod, #access-lastmod {
     display: none !important;
   }
 </style>
