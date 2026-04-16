@@ -1,4 +1,60 @@
 ---
-layout: home
-# Index page
+layout: page
+# Chirpy의 기본 home 레이아웃 대신 page 레이아웃을 사용해 사이드바를 유지하거나, 
+# 아예 빈 공간으로 만들 수 있어.
 ---
+
+<style>
+  /* 1. 배경과 전체 레이아웃 초기화 */
+  #main-wrapper, #core-wrapper {
+    background: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. 패트릭 콜리슨 스타일의 정렬과 폰트 설정 */
+  .minimal-portal {
+    text-align: right; /* 오른쪽 정렬 (패트릭 콜리슨 스타일) */
+    margin-top: 50px;
+    font-family: "Inter", sans-serif; /* 깔끔한 산세리프 폰트 */
+  }
+
+  .name-title {
+    font-size: 1.2rem; /* 네 이름 크기 */
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: black;
+  }
+
+  .portal-links {
+    list-style: none;
+    padding: 0;
+    line-height: 1.6; /* 줄 간격 */
+  }
+
+  .portal-links a {
+    text-decoration: underline; /* 패트릭 콜리슨 특유의 밑줄 링크 */
+    color: #0000EE; /* 기본 블루 링크 색상 */
+    font-size: 0.95rem; /* 링크 폰트 크기 */
+  }
+
+  .portal-links a:hover {
+    color: #551A8B;
+  }
+
+  /* 3. 불필요한 테마 요소 숨기기 (선택) */
+  #sidebar, #search-results, .post-navigation, #footer {
+    display: none !important; /* 사이드바와 푸터를 숨겨서 극도의 미니멀리즘 구현 */
+  }
+</style>
+
+<div class="minimal-portal">
+  <div class="name-title">CHAEYEON YOO</div>
+  <ul class="portal-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/notes">Notes</a></li>
+    <li><a href="/builds">Builds</a></li>
+    <li><a href="/library">Library</a></li>
+    <li><a href="/questions">Questions</a></li>
+  </ul>
+</div>
