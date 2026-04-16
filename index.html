@@ -1,40 +1,44 @@
 <style>
-  /* 배경 초기화 */
-  #main-wrapper, #core-wrapper {
+  /* 1. 배경 초기화 및 화면 전체 높이 확보 */
+  /* Chirpy 테마의 복잡한 레이아웃을 무시하고 화면 전체를 중앙 정렬 기지로 만듭니다. */
+  html, body, #main-wrapper, #core-wrapper, #main {
+    height: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;   /* 수직(세로) 중앙 정렬 */
+    justify-content: center; /* 수평(가로) 중앙 정렬 */
     background: white !important;
-    border: none !important;
-    box-shadow: none !important;
   }
 
+  /* 2. 포털 컨테이너 설정 */
   .minimal-portal {
-    text-align: center; /* 전체 가운데 정렬 */
-    margin-top: center; /* 가운데 정렬 */
-    padding: 0; /* 기존 패딩 제거 */
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+    font-family: "Inter", -apple-system, sans-serif;
+    /* margin-top은 이제 필요 없으므로 제거하거나 0으로 설정 */
   }
 
   .name-title {
-    font-size: 2.2rem; /* 이름 크기 살짝 키움 */
+    font-size: 2.2rem;
     font-weight: 600;
     margin-bottom: 8px;
     color: #1a1a1a;
+    letter-spacing: -0.5px; /* 약간 자간을 좁히면 더 세련돼 보여 */
   }
 
   .tagline {
     font-size: 1.1rem;
-    color: #666; /* 약간 부드러운 회색 */
-    margin-bottom: 40px; /* 문구와 링크 사이 간격 */
+    color: #666;
+    margin-bottom: 40px;
     font-weight: 400;
-    letter-spacing: 0.5px;
   }
 
+  /* 3. 링크 가로 정렬 */
   .portal-links {
     list-style: none;
     padding: 0;
-    display: flex; /* 가로 정렬의 핵심 */
-    justify-content: center; /* 링크들을 가로 가운데로 */
-    gap: 30px; /* 링크 사이의 간격 (여백) */
-    flex-wrap: wrap; /* 화면이 작아지면 자연스럽게 줄바꿈 */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
   }
 
   .portal-links a {
@@ -42,29 +46,14 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.2s;
   }
 
   .portal-links a:hover {
-    color: #004a99;
-    text-decoration: underline; /* 호버했을 때만 밑줄로 포인트 */
+    text-decoration: underline;
   }
 
-  /* Chirpy 테마의 기본 요소들 숨기기 */
-  #sidebar, #search-results, .post-navigation, #footer, .page__lastmod {
+  /* 4. Chirpy 기본 UI 강제 숨기기 */
+  #sidebar, #search-results, .post-navigation, #footer, .page__lastmod, #topbar-wrapper {
     display: none !important;
   }
 </style>
-
-<div class="minimal-portal">
-  <div class="name-title">CHAEYEON YOO LEE</div>
-  <div class="tagline">kind, loving, warm and good-hearted</div>
-  
-  <ul class="portal-links">
-    <li><a href="/about">About</a></li>
-    <li><a href="/notes">Notes</a></li>
-    <li><a href="/builds">Builds</a></li>
-    <li><a href="/library">Library</a></li>
-    <li><a href="/questions">Questions</a></li>
-  </ul>
-</div>
