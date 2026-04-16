@@ -1,59 +1,70 @@
 <style>
-  /* 1. 배경을 깨끗한 흰색으로 고정 */
-  body {
-    background-color: white !important;
-  }
+  /* 배경 초기화 */
+  #main-wrapper, #core-wrapper {
+    background: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 
-  /* 2. 대문을 화면 전체 기준 정중앙에 고정 (The Nuclear Option) */
-  .minimal-portal {
-    position: fixed;    /* 뷰포트(화면) 기준 고정 */
-    top: 50%;           /* 위에서 50% 지점 */
-    left: 50%;          /* 왼쪽에서 50% 지점 */
-    transform: translate(-50%, -50%); /* 자기 크기의 절반만큼 역이동해서 완벽한 중앙 배치 */
-    
-    text-align: center;
-    width: 100%;        /* 가로 너비 확보 */
-    z-index: 9999;      /* 다른 테마 요소보다 무조건 위에 출력 */
-    font-family: "Inter", -apple-system, sans-serif;
-  }
+  .minimal-portal {
+    text-align: center; /* 전체 가운데 정렬 */
+    margin-top: center; /* 가운데 정렬 */
+    padding: 0; /* 기존 패딩 제거 */
+    font-family: "Inter", sans-serif;
+  }
 
-  .name-title {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-  }
+  .name-title {
+    font-size: 2.2rem; /* 이름 크기 살짝 키움 */
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
 
-  .tagline {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 40px;
-    font-weight: 400;
-  }
+  .tagline {
+    font-size: 1.1rem;
+    color: #666; /* 약간 부드러운 회색 */
+    margin-bottom: 40px; /* 문구와 링크 사이 간격 */
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
 
-  /* 3. 링크 가로 정렬 */
-  .portal-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
+  .portal-links {
+    list-style: none;
+    padding: 0;
+    display: flex; /* 가로 정렬의 핵심 */
+    justify-content: center; /* 링크들을 가로 가운데로 */
+    gap: 30px; /* 링크 사이의 간격 (여백) */
+    flex-wrap: wrap; /* 화면이 작아지면 자연스럽게 줄바꿈 */
+  }
 
-  .portal-links a {
-    color: #1e73be;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-  }
+  .portal-links a {
+    color: #1e73be;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
 
-  .portal-links a:hover {
-    text-decoration: underline;
-  }
+  .portal-links a:hover {
+    color: #004a99;
+    text-decoration: underline; /* 호버했을 때만 밑줄로 포인트 */
+  }
 
-  /* 4. 기존 테마 UI 싹 다 숨기기 */
-  #sidebar, #topbar-wrapper, #search-results, .post-navigation, #footer, .page__lastmod, #access-lastmod {
-    display: none !important;
-  }
+  /* Chirpy 테마의 기본 요소들 숨기기 */
+  #sidebar, #search-results, .post-navigation, #footer, .page__lastmod {
+    display: none !important;
+  }
 </style>
+
+<div class="minimal-portal">
+  <div class="name-title">CHAEYEON YOO LEE</div>
+  <div class="tagline">kind, loving, warm and good-hearted</div>
+  
+  <ul class="portal-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/notes">Notes</a></li>
+    <li><a href="/builds">Builds</a></li>
+    <li><a href="/library">Library</a></li>
+    <li><a href="/questions">Questions</a></li>
+  </ul>
+</div>
